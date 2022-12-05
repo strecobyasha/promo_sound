@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="static/css/slider.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+</head>
+<body>
+
+    <form action="http://localhost:5000/sound" method="POST" enctype="multipart/form-data">
+        <input type="file" name="file" />
+        <input type="submit"/>
+        <div id="settings">
+            <span class="multi-range">
+                <input type="range" min="0" max="50" value="5" id="lower" name="lower">
+                <input type="range" min="0" max="50" value="45" id="upper" name="upper">
+            </span>
+            <input type="checkbox" id="fading-start" name="fading_start" value="0">
+            <label for="fading-start"> Start from fading </label><br>
+            <input type="checkbox" id="fading-end" name="fading_end" value="0">
+            <label for="fading-end"> End with fading </label><br>
+        </div>
+    </form>
+
+    <p> Result: {{result}} </p>
+
+    <a href="/download"> Download </a>
+
+<script src="static/js/slider.js"></script>
+
+</body>
+</html>
